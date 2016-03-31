@@ -20,10 +20,10 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'fest');
+define('DB_NAME', 'antalia_flower');
 
 /** MySQL database username */
-define('DB_USER', 'fest');
+define('DB_USER', 'antalia');
 
 /** MySQL database password */
 //define('DB_PASSWORD', 'jShdvSNBrTEB3fVZ');
