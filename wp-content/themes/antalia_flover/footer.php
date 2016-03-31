@@ -1,28 +1,39 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package antalia_flover
- */
+<!---- social-block ---->
+<footer class="social">
+	<a href="#" class="inst"></a>
+	<a href="#" class="vk"></a>
+	<a href="#" class="fb"></a>
+	<a href="#" class="mail"></a>
+</footer>
 
-?>
+<div id="iview" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	<div class="modal-dialog modal-lg modal-img">
 
-	</div><!-- #content -->
+	</div>
+</div>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'antalia_flover' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'antalia_flover' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'antalia_flover' ), 'antalia_flover', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+</div>
 
-<?php wp_footer(); ?>
+<script src="<?php bloginfo('template_directory');?>/public/js/jquery-2.2.2.min.js"></script>
+<script src="<?php bloginfo('template_directory');?>/public/js/bootstrap.min.js"></script>
+<script>
 
+	function showImage(e) {
+		var mo = $('#iview');
+		$('#iview .modal-dialog').html($('<img>',{
+			src: e.next('img').attr('src')
+		})).append($('<div>', {
+			class: 'close',
+			'data-dismiss':'modal',
+			'aria-label':'Close'
+		}).append($('<span>',{
+			'aria-hidden': true,
+			text: '×'
+		})));
+		mo.modal();
+
+	}
+
+</script>
 </body>
 </html>

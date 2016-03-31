@@ -42,14 +42,14 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="/" class="logo-normal"><img src="resources/logo.png" alt="logo"></a>
+					<a href="/" class="logo-normal"><img src="<?php echo the_field('logo');?>" alt="logo"></a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">О компании</a></li>
-						<li><a href="#">Новости</a></li>
-						<li><a href="#">Галерея</a></li>
+						<?php $menu=wp_get_nav_menu_items('left'); /*print_r($menu);*/ foreach ($menu as $key=>$val) { if (!$val->menu_item_parent){?>
+							<li class=""><?php the_title() ?> <a href="<?=$val->url?>"><?=$val->title?></a></li>
+						<?php }}?>
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
