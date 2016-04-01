@@ -11,7 +11,7 @@
  *
  * @package antalia_flover
  */
-$args = array( 'cat'=> 1 ,'numberposts'=>$page ,'offset'=>$offsett_post );
+$args = array( 'cat'=> 1 ,'numberposts'=>$page );
 get_header(); ?>
 
 	<!---- promo ---->

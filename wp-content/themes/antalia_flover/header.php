@@ -1,3 +1,4 @@
+<?php include_once ('gallery.php')?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,8 +24,8 @@
 			</div>
 			<div class="pull-right block">
 				<ul class="pull-right">
-					<li><a href="tel:+77777777777">+7(777)777-77-77</a></li>
-					<li><a href="tel:+77777777777">+7(777)777-77-77</a></li>
+					<li><a href="tel:<?php the_field('tel1'); ?>"><?php the_field('tel1'); ?></a></li>
+					<li><a href="tel:<?php the_field('tel2'); ?>"><?php the_field('tel2'); ?></a></li>
 				</ul>
 				<img class="pull-left" src="<?php bloginfo('template_directory');?>/public/pic/phone.png" alt="Телефоны">
 			</div>
@@ -47,16 +48,15 @@
 
 				<div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<?php $menu=wp_get_nav_menu_items('left'); /*print_r($menu);*/ foreach ($menu as $key=>$val) { if (!$val->menu_item_parent){?>
-							<li class=""><?php the_title() ?> <a href="<?=$val->url?>"><?=$val->title?></a></li>
+						<?php $menu=wp_get_nav_menu_items('left'); /*print_r($menu);*/ foreach ($menu as $key=>$val) { if (!$val->menu_item_parent){ $class='';  $title=get_the_title(); if($title==$val->title){$class='active';} ?>
+							<li class="<?php echo $class;?>"><a href="<?=$val->url?>"><?=$val->title?></a></li>
 						<?php }}?>
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Услуги</a></li>
-						<li><a href="#">Контакты</a></li>
-						<li><a href="#">Отзывы</a></li>
-
+						<?php $menu=wp_get_nav_menu_items('right'); /*print_r($menu);*/ foreach ($menu as $key=>$val) { if (!$val->menu_item_parent){ $class='';  $title=get_the_title(); if($title==$val->title){$class='active';} ?>
+							<li class="<?php echo $class;?>"><a href="<?=$val->url?>"><?=$val->title?></a></li>
+						<?php }}?>
 					</ul>
 				</div>
 			</div>
