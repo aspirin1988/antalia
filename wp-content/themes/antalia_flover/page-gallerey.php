@@ -15,7 +15,7 @@ $page=16;
 $args = array( 'cat'=> 1 ,'numberposts'=>$page ,'offset'=>$offsett_post );
 get_header();
 $offsett_post= $wp_query->query_vars['page']*$page;
-echo $offsett_post;
+//echo $offsett_post;
 $count_page = get_gall_count('gallerey');
 $count_page=ceil($count_page / $page);;
 ?>
