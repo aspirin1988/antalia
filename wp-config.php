@@ -20,17 +20,20 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'antalia');
+//define('DB_NAME', 'antalia');
+define('DB_NAME', 'blinkkz1_antaly');
 
 /** MySQL database username */
-define('DB_USER', 'antalia');
+//define('DB_USER', 'antalia');
+define('DB_USER', 'blink_antaly');
 
 /** MySQL database password */
 //define('DB_PASSWORD', 'jShdvSNBrTEB3fVZ');
-define('DB_PASSWORD', '123456');
+//define('DB_PASSWORD', '123456');
+define('DB_PASSWORD', 'nYa360_b');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'srv-db-plesk13.ps.kz');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');

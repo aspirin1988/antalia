@@ -9,7 +9,8 @@ function get_gall($name)
 {
     $gl = array();
     $res = array();
-    $path = wp_upload_dir()['baseurl'] . '/img-collections/';
+    $path = wp_upload_dir();
+    $path = $path['baseurl'] . '/img-collections/';
     $mu = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     $mu->set_charset("utf8");
     if ($mu) {
@@ -26,11 +27,12 @@ function get_gall($name)
     return $res[$name];
 }
 
-function get_gall_matrix($name,$col,$page,$offset=0)
+function get_gall_matrix($name,$col=4,$page=0,$offset=0)
 {
     $gl = array();
     $res = array();
-    $path = wp_upload_dir()['baseurl'] . '/img-collections/';
+    $path = wp_upload_dir();
+    $path = $path['baseurl'] . '/img-collections/';
     $mu = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     $mu->set_charset("utf8");
     if ($mu) {
@@ -47,7 +49,7 @@ function get_gall_matrix($name,$col,$page,$offset=0)
     $matrix=$res[$name];
     $count=0;
     $row=0;
-    $res=[];
+    $res=array();
     for($i=$offset;$i<$offset+$page;$i++)
     {
         if (isset($matrix[$i])) {
@@ -55,7 +57,7 @@ function get_gall_matrix($name,$col,$page,$offset=0)
         }
     }
     $matrix=$res;
-    $res=[];
+    $res=array();
 
     foreach($matrix as $value){
             if ($count == $col) {
@@ -72,7 +74,8 @@ function get_gall_count($name)
 {
     $gl = array();
     $res = array();
-    $path = wp_upload_dir()['baseurl'] . '/img-collections/';
+    $path = wp_upload_dir();
+    $path=$path['baseurl'] . '/img-collections/';
     $mu = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     $mu->set_charset("utf8");
     if ($mu) {
@@ -93,7 +96,8 @@ function get_logo($name)
 {
     $gl = array();
     $res = array();
-    $path = wp_upload_dir()['baseurl'] . '/img-collections/';
+    $path = wp_upload_dir();
+    $path=$path['baseurl'] . '/img-collections/';
     $mu = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     $mu->set_charset("utf8");
     if ($mu) {
