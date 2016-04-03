@@ -36,11 +36,12 @@ get_header(); ?>
 		<article>
 			<div class="row">
 				<div class="col-sm-4">
-					<?php echo get_the_post_thumbnail( $post->id, 'medium');?>
+						<img class="img-responsive" src="<?php echo get_the_post_thumbnail_url( $post->id, 'medium');?>" alt="">
+
 				</div>
 				<div class="col-sm-8">
 					<p><?php echo $post->post_date_gmt; ?> </p>
-					<p><?php the_title(); ?></p>
+					<p><a  href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 					<p><?php the_content();?></p>
 				</div>
 			</div>

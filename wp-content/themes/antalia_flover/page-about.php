@@ -18,10 +18,10 @@ get_header(); ?>
 	<div class="page-container about">
 		<h3><?php the_title()?></h3>
 		<div class="row-about">
-			<div>
+			<div class="col-md-6">
 				<img class="img-responsive flowers" src="<?php the_field('from1000') ?>" alt="Цветы">
 			</div>
-			<div>
+			<div class="col-md-6">
 			<?php $lastposts = get_posts( $args );
 				setup_postdata($lastposts[0]);
 				the_content();

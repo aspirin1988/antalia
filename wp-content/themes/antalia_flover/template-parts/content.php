@@ -4,44 +4,28 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package antalia_flover
+ * @package fest
  */
 
 ?>
+<div class="row">
+	<div class="col-md-12">
+		<?php $img=''; $img=get_the_post_thumbnail_url( get_the_ID(), 'full'); if ($img) {?>
+			<img class="img-thumbnail"  src="<?=$img?>" alt="df">
+		<?php }?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-			if ( is_single() ) {
-				the_title( '<h1 class="entry-title">', '</h1>' );
-			} else {
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			}
+	</div>
+	<div class="col-sm-12">
+		<p>2016-04-01 05:37:38 </p>
+		<p><a  href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+		<p></p><p><?php the_content(); ?></p>
+		<p></p>
+	</div>
+</div>
+</div>
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php antalia_flover_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'antalia_flover' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+<footer class="entry-footer">
+	<?php //fest_entry_footer(); ?>
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'antalia_flover' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php antalia_flover_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+</footer><!-- .entry-footer -->

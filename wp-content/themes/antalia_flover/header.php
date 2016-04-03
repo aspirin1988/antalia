@@ -1,4 +1,6 @@
-<?php include_once ('gallery.php')?>
+<?php include_once ('gallery.php');
+$logo=get_gall('logo');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +26,8 @@
 			</div>
 			<div class="pull-right block">
 				<ul class="pull-right">
-					<li><a href="tel:<?php the_field('tel1'); ?>"><?php the_field('tel1'); ?></a></li>
-					<li><a href="tel:<?php the_field('tel2'); ?>"><?php the_field('tel2'); ?></a></li>
+					<li><a href="tel:<?php the_field('tel1',6); ?>"><?php the_field('tel1',6); ?></a></li>
+					<li><a href="tel:<?php the_field('tel2',6); ?>"><?php the_field('tel2',6); ?></a></li>
 				</ul>
 				<img class="pull-left" src="<?php bloginfo('template_directory');?>/public/pic/phone.png" alt="Телефоны">
 			</div>
@@ -43,7 +45,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="/" class="logo-normal"><img src="<?php echo the_field('logo');?>" alt="logo"></a>
+					<a href="/" class="logo-normal"><img src="<?php echo $logo[0]['path'];?>" alt="logo"></a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="bs-navbar-collapse-1">

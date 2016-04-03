@@ -38,17 +38,17 @@ get_header(); ?>
 		<?php } ?>
 		</div>
 		<img src="<?php bloginfo('template_directory'); ?>/public/pic/heart.png" alt="heart">
-		<div class="row">
-			<div class="col-md-3"></div>
-			<div class="col-md-6 comment">
-					<!— Вывод формы отправки комментариев —>
-				<?php comment_form(array(
-					'class_form' => '',
-					'class_submit' => 'btn btn-default',
-				)); ?>
-			</div>
-			<div class="col-md-3"></div>
-		</div>
+<!--		<div class="row">-->
+<!--			<div class="col-md-3"></div>-->
+<!--			<div class="col-md-6 comment">-->
+<!--					<!— Вывод формы отправки комментариев —>-->
+<!--				--><?php //comment_form(array(
+//					'class_form' => '',
+//					'class_submit' => 'btn btn-default',
+//				)); ?>
+<!--			</div>-->
+<!--			<div class="col-md-3"></div>-->
+<!--		</div>-->
 	</section>
 
 
