@@ -45,7 +45,7 @@ $logo=get_gall('logo');
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="/" class="logo-normal"><img src="<?php echo $logo[0]['path'];?>" alt="logo"></a>
+					<a href="/" class="logo-normal"><img src="<?php the_field('logo',6);?>" alt="logo"></a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
