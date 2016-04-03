@@ -33,7 +33,7 @@ define('DB_USER', 'blink_antaly');
 define('DB_PASSWORD', 'nYa360_b');
 
 /** MySQL hostname */
-define('DB_HOST', 'srv-db-plesk13.ps.kz');
+define('DB_HOST', 'srv-db-plesk13.ps.kz:3306');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');

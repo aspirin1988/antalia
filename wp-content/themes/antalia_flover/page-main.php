@@ -93,7 +93,7 @@ get_header(); ?>
 
 		</div>
 	</div>
-
+	<script type="text/javascript" src="http://callback.blink.kz/client/script/GET/"></script>
 
 <?php
 get_footer();
