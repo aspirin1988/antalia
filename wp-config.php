@@ -30,10 +30,11 @@ define('DB_USER', 'blink_antaly');
 /** MySQL database password */
 //define('DB_PASSWORD', 'jShdvSNBrTEB3fVZ');
 //define('DB_PASSWORD', '123456');
-define('DB_PASSWORD', 'nYa360_b');
+define('DB_PASSWORD', 'zOpi172$');
 
 /** MySQL hostname */
 define('DB_HOST', 'srv-db-plesk13.ps.kz:3306');
+//define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
