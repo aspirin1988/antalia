@@ -15,6 +15,7 @@ $page=16;
 $args = array( 'cat'=> 1 ,'numberposts'=>$page ,'offset'=>$offsett_post );
 get_header();
 $offsett_post= $wp_query->query_vars['page']*$page;
+$curent_page=$wp_query->query_vars['page'];
 //echo $offsett_post;
 $count_page = get_gall_count('gallerey');
 $count_page=ceil($count_page / $page);;
@@ -38,9 +39,16 @@ $count_page=ceil($count_page / $page);;
 		<?php if ($count_page>1){?>
 		<nav>
 			<ul class="pagination">
-				<?php for($i=0;$i<$count_page;$i++) {?>
-				<li><a href="/gallerey/<?=$i?>"><?=$i+1?></a></li>
-				<?php } ?>
+				<?php if ($curent_page>0){?>
+				<li><a href="/gallerey/<?=$curent_page-1?>"><</a></li>
+				<?php }$activ='active'?>
+
+				<?php  for($i=$curent_page;$i<$curent_page+5;$i++) { if ($i<$count_page){ ?>
+				<li class="<?=$activ?>"><a  href="/gallerey/<?=$i?>"><?=$i+1?></a></li>
+				<?php $activ='';}} ?>
+				<?php if ($curent_page<$count_page-1){ ?>
+					<li><a href="/gallerey/<?=$curent_page+1?>">></a></li>
+				<?php }?>
 			</ul>
 		</nav>
 		<?php }?>
