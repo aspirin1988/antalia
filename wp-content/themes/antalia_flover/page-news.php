@@ -20,7 +20,6 @@ $cat_id=4;
 $count_posts = get_category($cat_id)->category_count;
 global$page_count;
 $page_count= ceil($count_posts / $page);
-echo $page_count;
 global $offsett_post;
 $offsett_post= $wp_query->query_vars['page']*$page;
 $args = array( 'cat'=> $cat_id ,'numberposts'=>$page ,'offset'=>$offsett_post );

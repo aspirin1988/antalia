@@ -18,28 +18,39 @@ get_header(); ?>
 	<!---- promo ---->
 	<div class="page-container">
 		<div class="serv-header">
-			<img src="<?php bloginfo('template_directory') ?>/public/pic/people.png" alt="" class="hidden-xs">
+			<img src="<?php  bloginfo('template_directory') ?>/public/pic/people.png" alt="" class="hidden-xs">
 			<div>
 				<h3>Услуги</h3>
 				<p>Вы заняты работой или скромны и нерешительны, не знаете как признаться в любви - МЫ ПОМОЖЕМ ВАМ! </p>
 			</div>
 			<img src="<?php bloginfo('template_directory') ?>/public/pic/people-two.png" alt="" class="hidden-xs">
 		</div>
-
 		<div class="row">
+		<?php $col=0; $menu=wp_get_nav_menu_items('services'); echo print_r($menu,true); foreach ($menu as $key=>$val) { if (!$val->menu_item_parent){
+			if($col>=4){
+			?>
+			</div>
+			<div class="row">
+			<?php $col=0; } ?>
 			<div class="col-sm-3">
-				<p>Голландские розы</p>
-				<img src="<?php bloginfo('template_directory') ?>/public/pic/rose-1.png" alt="Голландские розы"></div>
-			<div class="col-sm-3">
-				<p>Местные розы</p>
-				<img src="<?php bloginfo('template_directory') ?>/public/pic/rose-2.png" alt="Местные розы"></div>
-			<div class="col-sm-3">
-				<p>Букеты с игрушками</p>
-				<img src="<?php bloginfo('template_directory') ?>/public/pic/rose-3.png" alt="Букеты с игрушками"></div>
-			<div class="col-sm-3">
-				<p>Гелиевые шары</p>
-				<img src="<?php bloginfo('template_directory') ?>/public/pic/balloons.png" alt="Гелиевые шары"></div>
+				<div id="dLabel0" class="hower" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<p><?php echo $val->post_title; ?></p>
+				<img src="<?php echo  get_the_post_thumbnail_url($val->ID); ?>" alt="Голландские розы">
+				</div>
+				<ul class="dropdown-menu" aria-labelledby="dLabel0">
+					<?php foreach($menu as $value1) {
+						if ($value1->menu_item_parent == $val->ID) {?>
+							<li><h4><?php echo $value1->title; ?></h4></li>
+							<?php
+						}
+					}
+					?>
+				</ul>
+
+				</div>
+		<?php $col++;}}?>
 		</div>
+
 		<div class="row">
 			<div class="col-sm-3">
 				<p>Буеты любой сложности</p>

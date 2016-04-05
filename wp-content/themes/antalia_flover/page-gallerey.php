@@ -18,7 +18,7 @@ $offsett_post= $wp_query->query_vars['page']*$page;
 $curent_page=$wp_query->query_vars['page'];
 //echo $offsett_post;
 $count_page = get_gall_count('gallerey');
-$count_page=ceil($count_page / $page);;
+$count_page=ceil($count_page / $page);
 ?>
 
 	<!---- gallerey ---->
