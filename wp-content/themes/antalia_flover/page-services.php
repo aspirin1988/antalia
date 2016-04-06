@@ -49,7 +49,7 @@ foreach ($menu as $key=>$val) {
 			<img src="<?php bloginfo('template_directory') ?>/public/pic/people-two.png" alt="" class="hidden-xs">
 		</div>
 		<div class="row">
-		<?php $col=0; foreach ($menu_new as $key=>$val) { if (!$val['parent']->menu_item_parent){
+		<?php $col=0; foreach ($menu_new as $key=>$val): if (!$val['parent']->menu_item_parent){
 			if($col>=4){
 			?>
 			</div>
@@ -60,7 +60,7 @@ foreach ($menu as $key=>$val) {
 				<div id="dLabel<?=$key?>" class="hower" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<?php }
 				else{?> <a href="<?=$val['parent']->url;?>" > <?php } ?>
-				<p><?php echo $val['parent']->post_title; ?></p>
+				<p><?php if(!$val['parent']->title){echo $val['parent']->post_title;} else { echo $val['parent']->title; } ?></p>
 				<img src="<?php echo  get_the_post_thumbnail_url($val['parent']->ID); ?>" alt="Голландские розы">
 				<?php if (!count($val['child'])){ ?></a><?php }?>
 				<?php if (count($val['child'])){ ?>
@@ -78,9 +78,10 @@ foreach ($menu as $key=>$val) {
 				</ul>
 				<?php } ?>
 				</div>
-		<?php $col++;}}?>
+		<?php $col++;} endforeach;?>
 		</div>
 	</div>
+
 
 
 <?php
