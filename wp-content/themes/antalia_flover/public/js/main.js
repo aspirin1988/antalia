@@ -3,9 +3,6 @@
  */
 $(document).ready(function(){
 
-    $('.hower').mouseenter(function(){
-        $('.dropdown-menu').dropdown();
-    });
     function showImage(e) {
         var mo = $('#iview');
         $('#iview .modal-dialog').html($('<img>',{

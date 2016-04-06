@@ -12,8 +12,31 @@
  * @package antalia_flover
  */
 
+
 $args = array( 'cat' =>5);
-get_header(); ?>
+get_header();
+
+$menu=wp_get_nav_menu_items('services');
+$menu_new=array();
+
+//echo print_r($menu,true);
+foreach ($menu as $key=>$val) {
+	$child=array();
+	if (!$val->menu_item_parent) {
+		foreach($menu as $value)
+		{
+			if ($value->menu_item_parent == $val->ID) {
+				$child[]=$value;
+			}
+		}
+		$menu_new[]=array('parent'=>$val,'child'=>$child);
+		//$menu_new[count($menu_new)-1]['child']=$child;
+	}
+}
+//echo print_r($menu_new,true);
+
+
+?>
 
 	<!---- promo ---->
 	<div class="page-container">
@@ -26,66 +49,34 @@ get_header(); ?>
 			<img src="<?php bloginfo('template_directory') ?>/public/pic/people-two.png" alt="" class="hidden-xs">
 		</div>
 		<div class="row">
-		<?php $col=0; $menu=wp_get_nav_menu_items('services'); echo print_r($menu,true); foreach ($menu as $key=>$val) { if (!$val->menu_item_parent){
+		<?php $col=0; foreach ($menu_new as $key=>$val) { if (!$val['parent']->menu_item_parent){
 			if($col>=4){
 			?>
 			</div>
 			<div class="row">
 			<?php $col=0; } ?>
-			<div class="col-sm-3">
-				<div id="dLabel0" class="hower" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<p><?php echo $val->post_title; ?></p>
-				<img src="<?php echo  get_the_post_thumbnail_url($val->ID); ?>" alt="Голландские розы">
+			<div class="col-sm-3 <?php if (count($val['child'])){?>dropdown<?php } ?>">
+				<?php if (count($val['child'])){ ?>
+				<div id="dLabel<?=$key?>" class="hower" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<?php } ?>
+				<p><?php echo $val['parent']->post_title; ?></p>
+				<img src="<?php echo  get_the_post_thumbnail_url($val['parent']->ID); ?>" alt="Голландские розы">
+				<?php if (count($val['child'])){ ?>
 				</div>
-				<ul class="dropdown-menu" aria-labelledby="dLabel0">
-					<?php foreach($menu as $value1) {
-						if ($value1->menu_item_parent == $val->ID) {?>
-							<li><h4><?php echo $value1->title; ?></h4></li>
+				<ul class="dropdown-menu" aria-labelledby="dLabel<?=$key?>">
+					<li><h4><?php echo $val['parent']->post_title; ?>:</h4></li>
+
+					<?php foreach($val['child'] as $value1) {
+						if ($value1->menu_item_parent == $val['parent']->ID) {?>
+							<li><p><a href="<?=$value1->url?>" ><?php echo $value1->title; ?></a></p></li>
 							<?php
 						}
 					}
 					?>
 				</ul>
-
+				<?php } ?>
 				</div>
 		<?php $col++;}}?>
-		</div>
-
-		<div class="row">
-			<div class="col-sm-3">
-				<p>Буеты любой сложности</p>
-				<img src="<?php bloginfo('template_directory') ?>/public/pic/flowers-1.png" alt="Букеты любой сложности"></div>
-			<div class="col-sm-3">
-				<p>Букеты в коробках</p>
-				<img src="<?php bloginfo('template_directory') ?>/public/pic/flowers-in-box.png" alt="Букеты в коробках"></div>
-			<div class="col-sm-3 dropdown">
-				<div id="dLabel0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<p>Комнатные растения</p>
-					<img src="<?php bloginfo('template_directory') ?>/public/pic/flowers-2.png" alt="Комнатные растения"></div>
-				<ul class="dropdown-menu" aria-labelledby="dLabel0">
-					<?php $lastposts = get_posts( $args );
-					//print_r($lastposts);
-					setup_postdata($lastposts[0]);?>
-						<li><h4><?php echo $lastposts[1]->post_title;   ?></h4></li>
-					<?php
-						echo $lastposts[1]->post_content;
-					?>
-				</ul>
-			</div>
-
-			<div class="col-sm-3 dropdown">
-				<div id="dLabel1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<p>Изготовление...</p>
-					<img src="<?php bloginfo('template_directory') ?>/public/pic/ribbon.png" alt="Изготовление...">
-				</div>
-				<ul class="dropdown-menu" aria-labelledby="dLabel1">
-					<li><h4><?php echo $lastposts[0]->post_title;   ?></h4></li>
-					<?php
-					echo $lastposts[0]->post_content;
-					?>
-				</ul>
-			</div>
-
 		</div>
 	</div>
 

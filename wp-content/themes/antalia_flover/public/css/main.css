@@ -738,3 +738,7 @@ header>.top-nav{
     }
 
 }
+
+ul.dropdown-menu li p a{
+    color: white;
+}
