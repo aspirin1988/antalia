@@ -40,14 +40,16 @@ $count_page=ceil($count_page / $page);
 		<nav>
 			<ul class="pagination">
 				<?php if ($curent_page>0){?>
+				<li><a href="/gallerey/<?=0?>"><<</a></li>
 				<li><a href="/gallerey/<?=$curent_page-1?>"><</a></li>
 				<?php }$activ='active'?>
 
-				<?php  for($i=$curent_page;$i<$curent_page+5;$i++) { if ($i<$count_page){ ?>
-				<li class="<?=$activ?>"><a  href="/gallerey/<?=$i?>"><?=$i+1?></a></li>
-				<?php $activ='';}} ?>
+				<?php $ind=0; if($curent_page>2){$ind=$curent_page-2;}else{$ind=$curent_page;} for($i=$ind;$i<$curent_page+3;$i++) { if ($i<$count_page){ ?>
+				<li class="<?php if($i==$curent_page){echo $activ;}?>"><a  href="/gallerey/<?=$i?>"><?=$i+1?></a></li>
+				<?php }} ?>
 				<?php if ($curent_page<$count_page-1){ ?>
 					<li><a href="/gallerey/<?=$curent_page+1?>">></a></li>
+					<li><a href="/gallerey/<?=$count_page-1?>">>></a></li>
 				<?php }?>
 			</ul>
 		</nav>
