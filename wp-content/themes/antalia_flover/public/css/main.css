@@ -742,3 +742,7 @@ header>.top-nav{
 ul.dropdown-menu li p a{
     color: white;
 }
+
+a div.col-sm-3:hover {
+    color: #e20051;
+}

@@ -75,7 +75,7 @@ get_header(); ?>
 		<div class="description"><h4><?php the_field('description') ?></h4></div>
 		<div class="col-sm-6 col-sm-push-3">
 			<div class="white-glass">
-				<a><?php the_field('address');?></a>
+				<a href="/contacts/" ><?php the_field('address');?></a>
 			</div>
 		</div>
 		<div class="col-sm-3 col-sm-pull-6">
@@ -85,13 +85,15 @@ get_header(); ?>
 				или для себя любимой</p>
 
 		</div>
-
+		<a href="<?php the_field('address1') ?>">
 		<div class="col-sm-3">
+
 			<img src="<?php bloginfo('template_directory');?>/public/pic/transport.png" alt="Вы выбираете МЫ ДОСТАВЛЯЕМ!">
 			<p>Вы выбираете<br/>
 				МЫ ДОСТАВЛЯЕМ!</p>
 
 		</div>
+		</a>
 	</div>
 	<script type="text/javascript" src="http://callback.blink.kz/client/script/GET/"></script>
 
