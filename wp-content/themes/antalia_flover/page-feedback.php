@@ -22,17 +22,17 @@ get_header(); ?>
 			</div>
 		</div>
 		<div class="row">
-		<?php $comments = get_comments(); ?>
+		<?php  $comments=get_category_by_slug('reviews'); $comments = get_posts(array('cat'=>$comments->cat_ID)); ?>
 		<?php foreach ($comments as $key => $value){ ?>
 
 			<div class="col-md-3">
-				<?php echo get_avatar($value->user_id);?>
+				<img  src="<?php echo get_the_post_thumbnail_url( $value->ID, 'medium');?>" alt="">
 				<div class="name">
 					<figure> </figure>
-					<p><?php echo $value->comment_author; ?></p>
+					<p><?php echo $value->post_title; ?></p>
 					<figure> </figure>
 				</div>
-				<p><?php echo $value->comment_content; ?></p>
+				<p><?php echo $value->post_content; ?></p>
 			</div>
 
 		<?php } ?>

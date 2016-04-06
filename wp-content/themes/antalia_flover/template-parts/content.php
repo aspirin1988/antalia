@@ -22,10 +22,6 @@
 		<p></p>
 	</div>
 </div>
-</div>
 
 
-<footer class="entry-footer">
-	<?php //fest_entry_footer(); ?>
 
-</footer><!-- .entry-footer -->
