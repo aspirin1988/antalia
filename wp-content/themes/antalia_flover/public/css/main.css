@@ -746,3 +746,7 @@ ul.dropdown-menu li p a{
 a div.col-sm-3:hover {
     color: #e20051;
 }
+.col-sm-3 a {
+    color: #0F0F0F;
+    text-decoration:blink;
+}

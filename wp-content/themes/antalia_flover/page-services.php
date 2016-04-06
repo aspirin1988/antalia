@@ -58,9 +58,11 @@ foreach ($menu as $key=>$val) {
 			<div class="col-sm-3 <?php if (count($val['child'])){?>dropdown<?php } ?>">
 				<?php if (count($val['child'])){ ?>
 				<div id="dLabel<?=$key?>" class="hower" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<?php } ?>
+				<?php }
+				else{?> <a href="<?=$val['parent']->url;?>" > <?php } ?>
 				<p><?php echo $val['parent']->post_title; ?></p>
 				<img src="<?php echo  get_the_post_thumbnail_url($val['parent']->ID); ?>" alt="Голландские розы">
+				<?php if (!count($val['child'])){ ?></a><?php }?>
 				<?php if (count($val['child'])){ ?>
 				</div>
 				<ul class="dropdown-menu" aria-labelledby="dLabel<?=$key?>">
