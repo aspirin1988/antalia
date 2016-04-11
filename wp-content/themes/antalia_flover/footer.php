@@ -1,4 +1,4 @@
-<!---- social-block ---->
+<!-- social-block -->
 <footer class="social">
 	<a href="#" class="inst"></a>
 	<a href="#" class="vk"></a>

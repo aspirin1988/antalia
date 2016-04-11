@@ -2,7 +2,7 @@
 $logo=get_gall('logo');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<title>Анталия | Цветы, букеты, оформление</title>
@@ -15,7 +15,7 @@ $logo=get_gall('logo');
 <div class="container">
 	<header>
 
-		<!---- top-block ---->
+		<!--top-block-->
 		<div class="top-nav">
 			<div class="pull-left block">
 				<ul class="pull-left">
@@ -32,12 +32,12 @@ $logo=get_gall('logo');
 				<img class="pull-left" src="<?php bloginfo('template_directory');?>/public/pic/phone.png" alt="Телефоны">
 			</div>
 		</div>
-		<!---- top-block ---->
+		<!--top-block-->
 
-		<!---- menu ---->
+		<!--menu-->
 		<nav class="navbar navbar-default main-menu" role="navigation">
 			<div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
+				<!--Brand and toggle get grouped for better mobile display-->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
 						<span class="sr-only">Toggle navigation</span>
