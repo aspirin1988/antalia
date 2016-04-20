@@ -17,13 +17,16 @@ $logo=get_gall('logo');
 
 		<!--top-block-->
 		<div class="top-nav">
+			<a href="/доставка-цветов/">
 			<div class="pull-left block">
+
 				<ul class="pull-left">
 					<li>Доставка</li>
 					<li>по городу</li>
 				</ul>
 				<img   class="pull-right" src="<?php bloginfo('template_directory');?>/public/pic/transport.png" alt="Доставка">
 			</div>
+			</a>
 			<div class="pull-right block">
 				<ul class="pull-right">
 					<li><a href="tel:<?php the_field('tel1',6); ?>"><?php the_field('tel1',6); ?></a></li>

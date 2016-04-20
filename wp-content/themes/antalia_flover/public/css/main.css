@@ -27,6 +27,8 @@ body{
 .top-nav .block{
 }
 
+
+
 .top-nav img{
     height: 40px;
     margin: 10px;
@@ -182,6 +184,10 @@ header>.top-nav{
 .mini-gallery .col-xs-6>.over{
     opacity: 0;
     transition: opacity 500ms;
+}
+
+.block ul li{
+    list-style: none;
 }
 
 .mini-gallery .col-xs-6{

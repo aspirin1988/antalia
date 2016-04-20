@@ -11,8 +11,8 @@
  *
  * @package antalia_flover
  */
-$args = array( 'cat'=> 1 ,'numberposts'=>$page );
-$lastposts = get_posts( $args );
+$args = array( 'cat'=> 13 ,'numberposts'=>$page );
+$lastposts = get_post( $args );
 get_header(); ?>
 
 	<!---- promo ---->
@@ -20,12 +20,12 @@ get_header(); ?>
 		<h3><?php the_title()?></h3>
 		<div class="row-about">
 			<div class="col-md-6">
-				<img class="img-responsive flowers" src="<?php echo  get_the_post_thumbnail_url($lastposts[0]->ID) ?>" alt="Цветы">
+				<img class="img-responsive flowers" src="<?php echo  get_the_post_thumbnail_url($lastposts->ID) ?>" alt="Цветы">
 			</div>
 			<div class="col-md-6">
 			<?php
-				setup_postdata($lastposts[0]);
-				the_content();
+
+			echo $lastposts->post_content;
 			?>
 			</div>
 		</div>

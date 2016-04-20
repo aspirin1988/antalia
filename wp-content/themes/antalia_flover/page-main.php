@@ -85,7 +85,7 @@ get_header(); ?>
 				или для себя любимой</p>
 
 		</div>
-		<a href="<?php the_field('address1') ?>">
+		<a href="/доставка-цветов/">
 		<div class="col-sm-3">
 
 			<img src="<?php bloginfo('template_directory');?>/public/pic/transport.png" alt="Вы выбираете МЫ ДОСТАВЛЯЕМ!">

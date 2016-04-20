@@ -1,9 +1,9 @@
 <!-- social-block -->
 <footer class="social">
-	<a href="#" class="inst"></a>
-	<a href="#" class="vk"></a>
-	<a href="#" class="fb"></a>
-	<a href="#" class="mail"></a>
+	<a href="<?php the_field('inst',6); ?>" class="inst"></a>
+	<a href="<?php the_field('vk',6); ?>" class="vk"></a>
+	<a href="<?php the_field('fb',6); ?>" class="fb"></a>
+	<a href="mailto:<?php the_field('email',6); ?>" class="mail"></a>
 </footer>
 
 <div id="iview" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
