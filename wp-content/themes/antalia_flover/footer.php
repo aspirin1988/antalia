@@ -33,6 +33,7 @@
 
 	}
 </script>
-
+<?php the_field('google',6)?>
+<?php the_field('yandex',6)?>
 </body>
 </html>
