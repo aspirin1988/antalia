@@ -5,7 +5,28 @@ $logo=get_gall('logo');
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>Анталия | Цветы, букеты, оформление</title>
+	<?php $current_object=get_queried_object(); $field=get_option($current_object->taxonomy.'_'.$current_object->term_taxonomy_id) ?>
+	<title>Анталия |
+		<?php
+		if (is_tax()||is_category()){
+			$_title=$field['title'];
+			if ($_title){
+				echo $_title;
+			} else{
+				if (get_field('title')){
+					the_field('title');
+				}else{
+					wp_title();}
+			}
+		}else{
+			if (get_field('title')){
+				the_field('title');
+			}else{
+				wp_title();}
+		}?>
+	</title>
+	<meta name="description" content="<?php if (is_tax()){ echo $field['description'];}else{ the_field('description');}?>"/>
+	<link rel="shortcut icon" href="<?=get_field('favicon',6)?>">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/public/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/public/css/main.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
