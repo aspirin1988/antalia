@@ -28,8 +28,6 @@ define('DB_NAME', 'blinkkz1_antaly');
 define('DB_USER', 'blink_antaly');
 
 /** MySQL database password */
-//define('DB_PASSWORD', 'jShdvSNBrTEB3fVZ');
-//define('DB_PASSWORD', '123456');
 define('DB_PASSWORD', 'zOpi172$');
 
 /** MySQL hostname */
