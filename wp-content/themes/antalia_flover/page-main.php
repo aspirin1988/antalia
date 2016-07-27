@@ -15,7 +15,6 @@
 get_header(); ?>
 
 	<!---- promo ---->
-
 	<div class="row main-block-1">
 		<div class="col-sm-6 col-sm-push-3">
 			<div class="white-glass">
@@ -95,6 +94,7 @@ get_header(); ?>
 		</div>
 		</a>
 	</div>
+
 	<script type="text/javascript" src="http://callback.blink.kz/client/script/GET/"></script>
 
 <?php
